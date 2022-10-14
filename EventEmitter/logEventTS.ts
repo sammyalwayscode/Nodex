@@ -4,6 +4,11 @@ import path from "path";
 import { format } from "date-fns";
 import { v4 as uuid } from "uuid";
 
+// import event from "events";
+
+// const myEmitter = new event();
+// console.log(myEmitter);
+
 const eventLog = async (message: any) => {
   const dateTime = `${format(new Date(), "yyyy-MM-dd\tHH:mm:ss")}`;
   const logMessage = `${dateTime}\t${uuid()}\t${message}`;
@@ -22,4 +27,13 @@ const eventLog = async (message: any) => {
     console.log(error);
   }
 };
+
+// myEmitter.on("logs", (msg) => eventLog(msg));
+
+// myEmitter.emit("logs", "Logs Event Emitted");
+
+// setInterval(() => {
+//   myEmitter.emit("logs", "Logs Event Emitted");
+// }, 2000);
+
 export default eventLog;

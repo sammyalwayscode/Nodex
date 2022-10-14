@@ -3,7 +3,7 @@ import eventLog from "./logEventTS";
 
 const myEmitter = new TypedEvent();
 
-myEmitter.on("log", (msg) => eventLog(msg));
+myEmitter.on("logs", (msg) => eventLog(msg));
 
 setInterval(() => {
   myEmitter.emit("logs", "Logs Event Emitted");
